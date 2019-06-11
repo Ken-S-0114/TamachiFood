@@ -6,7 +6,7 @@ target 'TamachiFood' do
   use_frameworks!
 
   # Pods for TamachiFood
-
+  pod 'SwiftFormat/CLI'
   target 'TamachiFoodTests' do
     inherit! :search_paths
     # Pods for testing

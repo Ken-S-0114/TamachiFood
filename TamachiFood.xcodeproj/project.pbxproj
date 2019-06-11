@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0791F6D12D6AE108229C5E2D /* Pods_TamachiFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2448ED5E36DD7C4619D6C754 /* Pods_TamachiFoodTests.framework */; };
+		09ADE2316FC6BDD5C56082BE /* Pods_TamachiFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9753833F0430F4CF1FAC000 /* Pods_TamachiFoodUITests.framework */; };
 		B22E596022AFE56200D0AB2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E595F22AFE56200D0AB2B /* AppDelegate.swift */; };
 		B22E596222AFE56200D0AB2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E596122AFE56200D0AB2B /* ViewController.swift */; };
 		B22E596522AFE56200D0AB2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22E596322AFE56200D0AB2B /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		B22E596A22AFE56500D0AB2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22E596822AFE56500D0AB2B /* LaunchScreen.storyboard */; };
 		B22E597522AFE56500D0AB2B /* TamachiFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597422AFE56500D0AB2B /* TamachiFoodTests.swift */; };
 		B22E598022AFE56500D0AB2B /* TamachiFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */; };
+		EAC9147B445D4ADA06F1EE18 /* Pods_TamachiFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A18559E83BFD1CDC95A8015 /* Pods_TamachiFood.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08A6AD49977992360410CDBF /* Pods-TamachiFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFood.release.xcconfig"; path = "Target Support Files/Pods-TamachiFood/Pods-TamachiFood.release.xcconfig"; sourceTree = "<group>"; };
+		1A18559E83BFD1CDC95A8015 /* Pods_TamachiFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TamachiFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2448ED5E36DD7C4619D6C754 /* Pods_TamachiFoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TamachiFoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		357DE1E4E8C6485293DCCEB9 /* Pods-TamachiFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodTests.debug.xcconfig"; path = "Target Support Files/Pods-TamachiFoodTests/Pods-TamachiFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6ABA03CB6B6BE6E5D400682D /* Pods-TamachiFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodTests.release.xcconfig"; path = "Target Support Files/Pods-TamachiFoodTests/Pods-TamachiFoodTests.release.xcconfig"; sourceTree = "<group>"; };
+		9A8E53294168BCA003760C40 /* Pods-TamachiFoodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodUITests.debug.xcconfig"; path = "Target Support Files/Pods-TamachiFoodUITests/Pods-TamachiFoodUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A86946201AB317AB060566B8 /* Pods-TamachiFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFood.debug.xcconfig"; path = "Target Support Files/Pods-TamachiFood/Pods-TamachiFood.debug.xcconfig"; sourceTree = "<group>"; };
+		A9753833F0430F4CF1FAC000 /* Pods_TamachiFoodUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TamachiFoodUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22E595C22AFE56200D0AB2B /* TamachiFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamachiFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22E595F22AFE56200D0AB2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B22E596122AFE56200D0AB2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		B22E597B22AFE56500D0AB2B /* TamachiFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamachiFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamachiFoodUITests.swift; sourceTree = "<group>"; };
 		B22E598122AFE56500D0AB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E489578C61EC859161371865 /* Pods-TamachiFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodUITests.release.xcconfig"; path = "Target Support Files/Pods-TamachiFoodUITests/Pods-TamachiFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC9147B445D4ADA06F1EE18 /* Pods_TamachiFood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0791F6D12D6AE108229C5E2D /* Pods_TamachiFoodTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09ADE2316FC6BDD5C56082BE /* Pods_TamachiFoodUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		517B2F9B3FDD94315FF1AE3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A86946201AB317AB060566B8 /* Pods-TamachiFood.debug.xcconfig */,
+				08A6AD49977992360410CDBF /* Pods-TamachiFood.release.xcconfig */,
+				357DE1E4E8C6485293DCCEB9 /* Pods-TamachiFoodTests.debug.xcconfig */,
+				6ABA03CB6B6BE6E5D400682D /* Pods-TamachiFoodTests.release.xcconfig */,
+				9A8E53294168BCA003760C40 /* Pods-TamachiFoodUITests.debug.xcconfig */,
+				E489578C61EC859161371865 /* Pods-TamachiFoodUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6EA96F83BC8B7403E00A4ECC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A18559E83BFD1CDC95A8015 /* Pods_TamachiFood.framework */,
+				2448ED5E36DD7C4619D6C754 /* Pods_TamachiFoodTests.framework */,
+				A9753833F0430F4CF1FAC000 /* Pods_TamachiFoodUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B22E595322AFE56200D0AB2B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +120,8 @@
 				B22E597322AFE56500D0AB2B /* TamachiFoodTests */,
 				B22E597E22AFE56500D0AB2B /* TamachiFoodUITests */,
 				B22E595D22AFE56200D0AB2B /* Products */,
+				517B2F9B3FDD94315FF1AE3D /* Pods */,
+				6EA96F83BC8B7403E00A4ECC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B22E598422AFE56500D0AB2B /* Build configuration list for PBXNativeTarget "TamachiFood" */;
 			buildPhases = (
+				646EE40E660DCFFFBB3B4A48 /* [CP] Check Pods Manifest.lock */,
 				B22E595822AFE56200D0AB2B /* Sources */,
 				B22E595922AFE56200D0AB2B /* Frameworks */,
 				B22E595A22AFE56200D0AB2B /* Resources */,
@@ -150,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B22E598722AFE56500D0AB2B /* Build configuration list for PBXNativeTarget "TamachiFoodTests" */;
 			buildPhases = (
+				605767D5E8B5F3F808828044 /* [CP] Check Pods Manifest.lock */,
 				B22E596C22AFE56500D0AB2B /* Sources */,
 				B22E596D22AFE56500D0AB2B /* Frameworks */,
 				B22E596E22AFE56500D0AB2B /* Resources */,
@@ -168,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B22E598A22AFE56500D0AB2B /* Build configuration list for PBXNativeTarget "TamachiFoodUITests" */;
 			buildPhases = (
+				5796049EA01110F23893CADD /* [CP] Check Pods Manifest.lock */,
 				B22E597722AFE56500D0AB2B /* Sources */,
 				B22E597822AFE56500D0AB2B /* Frameworks */,
 				B22E597922AFE56500D0AB2B /* Resources */,
@@ -253,6 +297,72 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5796049EA01110F23893CADD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TamachiFoodUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		605767D5E8B5F3F808828044 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TamachiFoodTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		646EE40E660DCFFFBB3B4A48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TamachiFood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B22E598D22AFEE2B00D0AB2B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,6 +561,7 @@
 		};
 		B22E598522AFE56500D0AB2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A86946201AB317AB060566B8 /* Pods-TamachiFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -469,6 +580,7 @@
 		};
 		B22E598622AFE56500D0AB2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08A6AD49977992360410CDBF /* Pods-TamachiFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -487,6 +599,7 @@
 		};
 		B22E598822AFE56500D0AB2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 357DE1E4E8C6485293DCCEB9 /* Pods-TamachiFoodTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +621,7 @@
 		};
 		B22E598922AFE56500D0AB2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ABA03CB6B6BE6E5D400682D /* Pods-TamachiFoodTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -529,6 +643,7 @@
 		};
 		B22E598B22AFE56500D0AB2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A8E53294168BCA003760C40 /* Pods-TamachiFoodUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -549,6 +664,7 @@
 		};
 		B22E598C22AFE56500D0AB2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E489578C61EC859161371865 /* Pods-TamachiFoodUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
