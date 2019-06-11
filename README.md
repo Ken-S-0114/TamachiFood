@@ -1,6 +1,6 @@
 # TamachiLunch
 
-田町の飲食店をランダム表示
+田町の飲食店をランダムに表示するアプリ
 
 # 開発環境
 
@@ -12,5 +12,12 @@
 # 初期設定
 
 ## ツールの導入
-SwiftFormat
-`Pods/SwiftFormat/CommandLineTool/swiftformat . --exclude Carthage,Pods --trimwhitespace nonblank-lines --stripunusedargs closure-only --disable strongOutlets,trailingCommas`
+- Bundler を使って cocoapods を管理
+- ライブラリのインストール
+  - `$ bundle exec pod install`
+- 以下２つビルド時に実行
+  - SwiftFormat
+    - `$ Pods/SwiftFormat/CommandLineTool/swiftformat . --exclude Carthage,Pods --trimwhitespace nonblank-lines --stripunusedargs closure-only --disable strongOutlets,trailingCommas`
+  - SwiftLint
+    - `$ swiftlint autocorrect --format`
+    - `$ swiftlint`
