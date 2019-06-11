@@ -7,6 +7,8 @@ target 'TamachiFood' do
   # Pods for TamachiFood
   pod 'SwiftFormat/CLI'
   pod 'SwiftLint'
+  pod 'R.swift'
+  
   target 'TamachiFoodTests' do
     inherit! :search_paths
     # Pods for testing

@@ -16,6 +16,7 @@
 		B22E596A22AFE56500D0AB2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22E596822AFE56500D0AB2B /* LaunchScreen.storyboard */; };
 		B22E597522AFE56500D0AB2B /* TamachiFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597422AFE56500D0AB2B /* TamachiFoodTests.swift */; };
 		B22E598022AFE56500D0AB2B /* TamachiFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */; };
+		B22E599222B009A300D0AB2B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E599122B009A300D0AB2B /* R.generated.swift */; };
 		EAC9147B445D4ADA06F1EE18 /* Pods_TamachiFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A18559E83BFD1CDC95A8015 /* Pods_TamachiFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		B22E597B22AFE56500D0AB2B /* TamachiFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamachiFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamachiFoodUITests.swift; sourceTree = "<group>"; };
 		B22E598122AFE56500D0AB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B22E599122B009A300D0AB2B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		E489578C61EC859161371865 /* Pods-TamachiFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodUITests.release.xcconfig"; path = "Target Support Files/Pods-TamachiFoodUITests/Pods-TamachiFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 		B22E595322AFE56200D0AB2B = {
 			isa = PBXGroup;
 			children = (
+				B22E599122B009A300D0AB2B /* R.generated.swift */,
 				B22E595E22AFE56200D0AB2B /* TamachiFood */,
 				B22E597322AFE56500D0AB2B /* TamachiFoodTests */,
 				B22E597E22AFE56500D0AB2B /* TamachiFoodUITests */,
@@ -177,6 +180,8 @@
 				B22E595922AFE56200D0AB2B /* Frameworks */,
 				B22E595A22AFE56200D0AB2B /* Resources */,
 				B22E598D22AFEE2B00D0AB2B /* SwiftFormat and SwiftLint */,
+				EA782ABE21BC10ABA482A11A /* [CP] Embed Pods Frameworks */,
+				B22E599022B0087300D0AB2B /* R.swift */,
 			);
 			buildRules = (
 			);
@@ -380,6 +385,48 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --exclude Carthage,Pods --trimwhitespace nonblank-lines --stripunusedargs closure-only --disable strongOutlets,trailingCommas\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		B22E599022B0087300D0AB2B /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		EA782ABE21BC10ABA482A11A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TamachiFood/Pods-TamachiFood-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TamachiFood/Pods-TamachiFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -389,6 +436,7 @@
 			files = (
 				B22E596222AFE56200D0AB2B /* ViewController.swift in Sources */,
 				B22E596022AFE56200D0AB2B /* AppDelegate.swift in Sources */,
+				B22E599222B009A300D0AB2B /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

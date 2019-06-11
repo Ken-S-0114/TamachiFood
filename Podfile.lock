@@ -1,20 +1,28 @@
 PODS:
+  - R.swift (5.0.3):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
   - SwiftFormat/CLI (0.40.9)
   - SwiftLint (0.33.0)
 
 DEPENDENCIES:
+  - R.swift
   - SwiftFormat/CLI
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - R.swift
+    - R.swift.Library
     - SwiftFormat
     - SwiftLint
 
 SPEC CHECKSUMS:
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   SwiftFormat: 6b67b6e7fe73d664f0cbb4f13721f130462c86a5
   SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: f115c32d31c6aec070aa11a2ac3527407aca62c5
+PODFILE CHECKSUM: 05132da2d18e1070750a00a0e6812f75bcf0a82d
 
 COCOAPODS: 1.6.1
