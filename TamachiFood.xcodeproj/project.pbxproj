@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		B22E597522AFE56500D0AB2B /* TamachiFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597422AFE56500D0AB2B /* TamachiFoodTests.swift */; };
 		B22E598022AFE56500D0AB2B /* TamachiFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */; };
 		B22E599222B009A300D0AB2B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E599122B009A300D0AB2B /* R.generated.swift */; };
+		B22E599722B19C2900D0AB2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B22E599622B19C2900D0AB2B /* GoogleService-Info.plist */; };
 		EAC9147B445D4ADA06F1EE18 /* Pods_TamachiFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A18559E83BFD1CDC95A8015 /* Pods_TamachiFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamachiFoodUITests.swift; sourceTree = "<group>"; };
 		B22E598122AFE56500D0AB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B22E599122B009A300D0AB2B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		B22E599622B19C2900D0AB2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E489578C61EC859161371865 /* Pods-TamachiFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodUITests.release.xcconfig"; path = "Target Support Files/Pods-TamachiFoodUITests/Pods-TamachiFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				B22E596322AFE56200D0AB2B /* Main.storyboard */,
 				B22E596622AFE56500D0AB2B /* Assets.xcassets */,
 				B22E596822AFE56500D0AB2B /* LaunchScreen.storyboard */,
+				B22E599622B19C2900D0AB2B /* GoogleService-Info.plist */,
 				B22E596B22AFE56500D0AB2B /* Info.plist */,
 			);
 			path = TamachiFood;
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22E596A22AFE56500D0AB2B /* LaunchScreen.storyboard in Resources */,
+				B22E599722B19C2900D0AB2B /* GoogleService-Info.plist in Resources */,
 				B22E596722AFE56500D0AB2B /* Assets.xcassets in Resources */,
 				B22E596522AFE56200D0AB2B /* Main.storyboard in Resources */,
 			);
@@ -399,7 +403,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -8,7 +8,11 @@ target 'TamachiFood' do
   pod 'SwiftFormat/CLI'
   pod 'SwiftLint'
   pod 'R.swift'
-  
+  pod 'Firebase'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+
   target 'TamachiFoodTests' do
     inherit! :search_paths
     # Pods for testing
