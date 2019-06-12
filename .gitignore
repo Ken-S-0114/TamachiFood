@@ -132,4 +132,7 @@ iOSInjectionProject/
 ### R.swift ###
 *.generated.swift
 
+### bundler ###
+vendor/bundle
+
 # End of https://www.gitignore.io/api/swift,xcode,macos,cocoapods
