@@ -15,20 +15,19 @@ protocol FoodCardSetViewProtocol: NSObject {
     // 位置の変化が生じた際に実行されるアクション
     func updatePosition(_ cardView: FoodCardSetView, centerX: CGFloat, centerY: CGFloat)
     // 左側へのスワイプ動作が完了した場合に実行されるアクション
-    func swipedLeftPosition()
+    func swipedLeftPosition(_ cardView: FoodCardSetView)
     // 右側へのスワイプ動作が完了した場合に実行されるアクション
-    func swipedRightPosition()
+    func swipedRightPosition(_ cardView: FoodCardSetView)
     // 元の位置に戻る動作が完了したに実行されるアクション
-    func returnToOriginalPosition()
+    func returnToOriginalPosition(_ cardView: FoodCardSetView)
 }
 
 class FoodCardSetView: CustomViewBase {
-    
-    @IBOutlet weak private var storeNameLabel: UILabel!
-    @IBOutlet weak private var foodNameLabel: UILabel!
-    @IBOutlet weak private var remarkLabel: UILabel!
-    @IBOutlet weak private var foodImageView: UIImageView!
-    @IBOutlet weak private var readmoreButton: UIButton!
+    @IBOutlet private weak var storeNameLabel: UILabel!
+    @IBOutlet private weak var foodNameLabel: UILabel!
+    @IBOutlet private weak var remarkLabel: UILabel!
+    @IBOutlet private weak var foodImageView: UIImageView!
+    @IBOutlet private weak var readmoreButton: UIButton!
     
     private var initialCenter: CGPoint = CGPoint(
         x: UIScreen.main.bounds.size.width / 2,
@@ -107,25 +106,24 @@ class FoodCardSetView: CustomViewBase {
         case .began:
             // ドラッグ処理開始時のViewがある位置を取得
             originalPoint = CGPoint(
-                x: self.center.x - xPositionFromCenter,
-                y: self.center.y - yPositionFromCenter
+                x: center.x - xPositionFromCenter,
+                y: center.y - yPositionFromCenter
             )
-            self.delegate?.beganDragging(self)
+            delegate?.beganDragging(self)
             // Debug.
             debugPrint("beganCenterX:", originalPoint.x)
             debugPrint("beganCenterY:", originalPoint.y)
-
+            
             UIView.animate(withDuration: durationOfStartDragging, delay: 0.0, options: [.curveEaseInOut], animations: {
                 self.alpha = self.startDraggingAlpha
-                }, completion: nil)
-            break
+            }, completion: nil)
             
         case .changed:
             let newCenterX = originalPoint.x + xPositionFromCenter
             let newCenterY = originalPoint.y + yPositionFromCenter
-            self.center = CGPoint(x: newCenterX, y: newCenterY)
+            center = CGPoint(x: newCenterX, y: newCenterY)
             
-            self.delegate?.updatePosition(self, centerX: newCenterX, centerY: newCenterY)
+            delegate?.updatePosition(self, centerX: newCenterX, centerY: newCenterY)
             
             currentMoveXPercentFromCenter = min(xPositionFromCenter / UIScreen.main.bounds.size.width, 1)
             currentMoveYPercentFromCenter = min(yPositionFromCenter / UIScreen.main.bounds.size.height, 1)
@@ -139,9 +137,7 @@ class FoodCardSetView: CustomViewBase {
             let transforms = CGAffineTransform(rotationAngle: whenDraggingRotationAngel)
             
             let scaleTransform: CGAffineTransform = transforms.scaledBy(x: maxScaleOfDragging, y: maxScaleOfDragging)
-            self.transform = scaleTransform
-            
-            break
+            transform = scaleTransform
             
         case .ended, .cancelled:
             let whenEndedVelocity = sender.velocity(in: self)
@@ -151,21 +147,13 @@ class FoodCardSetView: CustomViewBase {
             let shouldMoveToLeft = (currentMoveXPercentFromCenter < -swipeXPosLimitRatio && abs(currentMoveYPercentFromCenter) > swipeYPosLimitRatio)
             let shouldMoveToRight = (currentMoveXPercentFromCenter > swipeXPosLimitRatio && abs(currentMoveYPercentFromCenter) > swipeYPosLimitRatio)
             
-            if shouldMoveToLeft {
-                
-            } else if shouldMoveToRight {
-                
-            } else {
-                
-            }
+            if shouldMoveToLeft {} else if shouldMoveToRight {} else {}
             
             originalPoint = CGPoint.zero
             xPositionFromCenter = 0.0
             yPositionFromCenter = 0.0
             currentMoveXPercentFromCenter = 0.0
             currentMoveYPercentFromCenter = 0.0
-            
-            break
             
         default:
             break
@@ -174,11 +162,62 @@ class FoodCardSetView: CustomViewBase {
     
     // Viewのボタンに対する初期設定
     private func setupReadMoreButton() {
-        readmoreButton.addTarget(self, action: #selector(self.readMoreButtonTapped), for: .touchUpInside)
+        readmoreButton.addTarget(self, action: #selector(readMoreButtonTapped), for: .touchUpInside)
     }
     
     private func setupPanGestureRecognizer() {
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.startDragging))
-        self.addGestureRecognizer(panGestureRecognizer)
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(startDragging))
+        addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    // カードを初期配置する位置へ戻す
+    private func moveInitialPosition() {
+        let beforeInitializePosX: CGFloat = CGFloat(Int.random(in: Range(-300 ... 300)))
+        let beforeInitializePosY: CGFloat = CGFloat(-Int.random(in: Range(300 ... 600)))
+        let beforeInitializeCenter = CGPoint(x: beforeInitializePosX, y: beforeInitializePosY)
+        
+        let beforeInitializeRotateAngle: CGFloat = CGFloat(Int.random(in: Range(-90 ... 90)))
+        let angle = beforeInitializeRotateAngle * .pi / 180.0
+        let beforeInitializeTransform = CGAffineTransform(rotationAngle: angle)
+        beforeInitializeTransform.scaledBy(x: beforeInitializeScale, y: beforeInitializeScale)
+        
+        alpha = 0
+        center = beforeInitializeCenter
+        transform = beforeInitializeTransform
+        
+        UIView.animate(withDuration: durationOfInitialize, animations: {
+            self.alpha = 1
+            self.center = self.initialCenter
+            self.transform = self.initialTransform
+        })
+    }
+    
+    // カードを元の位置へ戻す
+    private func moveOriginalPosition() {
+        UIView.animate(withDuration: durationOfReturnOriginal, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.0, options: [.curveEaseInOut], animations: {
+            self.alpha = self.stopDraggingAlpha
+            self.center = self.initialCenter
+            self.transform = self.initialTransform
+        }, completion: nil)
+        
+        delegate?.returnToOriginalPosition(self)
+    }
+    
+    // カードを左側の領域外へ動かす
+    private func moveInvisiblePosition(velocity: CGPoint, isLeft: Bool = true) {
+        // 変化後の予定位置を算出（Y軸方向の位置はvelocityに基づいた値を採用）
+        let absPosX = UIScreen.main.bounds.size.width * 1.6
+        let endCenterPosX = isLeft ? -absPosX : absPosX
+        let endCenterPosY = velocity.y
+        let endCenterPosition = CGPoint(x: endCenterPosX, y: endCenterPosY)
+        
+        UIView.animate(withDuration: durationOfSwipeOut, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.0, options: [.curveEaseInOut], animations: {
+            self.alpha  = self.stopDraggingAlpha
+            self.center = endCenterPosition
+        }, completion: { _ in
+            let _ = isLeft ? self.delegate?.swipedLeftPosition(self) : self.delegate?.swipedRightPosition(self)
+            
+            self.removeFromSuperview()
+        })
     }
 }
