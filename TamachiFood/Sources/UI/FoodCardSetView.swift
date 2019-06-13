@@ -68,6 +68,8 @@ class FoodCardSetView: CustomViewBase {
     
     override func initWith() {
         setupFoodCardSetView()
+        setupReadMoreButton()
+        setupPanGestureRecognizer()
     }
     
     // Viewに対する初期設定
@@ -165,9 +167,35 @@ class FoodCardSetView: CustomViewBase {
         readmoreButton.addTarget(self, action: #selector(readMoreButtonTapped), for: .touchUpInside)
     }
     
+    // UIPanGestureRecognizerの付与
     private func setupPanGestureRecognizer() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(startDragging))
         addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    // Viewの初期状態での傾きと切片の付与を行う
+    private func setupSlopeAndIntercept() {
+        // 中心位置のゆらぎを表現する値を設定
+        let fluctuationsPosX: CGFloat = CGFloat(Int.random(in: Range(-8...8)))
+        let fluctuationsPosY: CGFloat = CGFloat(Int.random(in: Range(-8...8)))
+        
+        let initialCenterPosX: CGFloat = UIScreen.main.bounds.size.width / 2
+        let initialCenterPosY: CGFloat = UIScreen.main.bounds.size.height / 2
+        
+        // 配置したViewに関する中心位置を算出する
+        initialCenter = CGPoint(
+            x: initialCenterPosX + fluctuationsPosX,
+            y: initialCenterPosY + fluctuationsPosY
+        )
+        
+        // 傾きのゆらぎを表現する値を設定する
+        let fluctuationsRotateAngle: CGFloat = CGFloat(Int.random(in: Range(-6...6)))
+        let angle = fluctuationsRotateAngle * .pi / 180.0 * 0.25
+        
+        initialTransform = CGAffineTransform(rotationAngle: angle)
+        initialTransform.scaledBy(x: afterInitializeScale, y: afterInitializeScale)
+        
+        moveInitialPosition()
     }
     
     // カードを初期配置する位置へ戻す
