@@ -74,9 +74,9 @@ class FoodCardSetView: CustomViewBase {
     }
     
     func setViewData(_ food: FoodModel) {
-        storeNameLabel.text = "Sample"
-        foodNameLabel.text = "SampleSample"
-        remarkLabel.text = "New"
+        storeNameLabel.text = food.storeName
+        foodNameLabel.text = food.foodName
+        remarkLabel.text = String(food.foodPrice)
         // foodImageView.image = UIImage.init()
     }
     
@@ -150,6 +150,7 @@ class FoodCardSetView: CustomViewBase {
             transform = scaleTransform
             
         case .ended, .cancelled:
+            // ドラッグ終了時点での速度を算出
             let whenEndedVelocity = sender.velocity(in: self)
             // Debug.
             debugPrint("whenEndedVelocity:", whenEndedVelocity)
@@ -157,7 +158,13 @@ class FoodCardSetView: CustomViewBase {
             let shouldMoveToLeft = (currentMoveXPercentFromCenter < -swipeXPosLimitRatio && abs(currentMoveYPercentFromCenter) > swipeYPosLimitRatio)
             let shouldMoveToRight = (currentMoveXPercentFromCenter > swipeXPosLimitRatio && abs(currentMoveYPercentFromCenter) > swipeYPosLimitRatio)
             
-            if shouldMoveToLeft {} else if shouldMoveToRight {} else {}
+            if shouldMoveToLeft {
+                moveInvisiblePosition(velocity: whenEndedVelocity, isLeft: true)
+            } else if shouldMoveToRight {
+                moveInvisiblePosition(velocity: whenEndedVelocity, isLeft: false)
+            } else {
+                moveOriginalPosition()
+            }
             
             originalPoint = CGPoint.zero
             xPositionFromCenter = 0.0

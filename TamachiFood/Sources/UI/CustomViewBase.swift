@@ -14,12 +14,15 @@ class CustomViewBase: UIView {
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
+        initContentView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        initContentView()
     }
     
+    // コンテンツ表示用Viewの初期化処理
     private func initContentView() {
         let viewClass: AnyClass = type(of: self)
         

@@ -6,7 +6,6 @@
 //  Copyright © 2019 佐藤賢. All rights reserved.
 //
 
-import Firebase
 import UIKit
 
 class FoodCardSetViewController: UIViewController {
@@ -23,6 +22,20 @@ class FoodCardSetViewController: UIViewController {
     
     private func setupFoodPresenter() {
         presenter = MockFoodPresenter(presenter: self)
+    }
+    
+    // 戻るボタンに関する設定を行う
+    private func setupDismissButton() {
+        navigationItem.leftBarButtonItem =
+            UIBarButtonItem(title: "戻る", style: .done, target: self, action: #selector(dismissButtonTapped))
+    }
+    
+    @IBAction func addCardButtonTapped(_ sender: UIBarButtonItem) {
+        presenter.getFoods()
+    }
+    
+    @IBAction func dismissButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     fileprivate func addFoodCardSetViews(foods: [FoodModel]) {

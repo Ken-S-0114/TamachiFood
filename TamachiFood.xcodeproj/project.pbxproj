@@ -217,11 +217,11 @@
 				B22E596322AFE56200D0AB2B /* Main.storyboard */,
 				B22E596822AFE56500D0AB2B /* LaunchScreen.storyboard */,
 				D5B0A7BD22B2055F00D329B8 /* FoodCardSetViewController.swift */,
-				D5B0A7C822B20E2200D329B8 /* FoodCardSetView.swift */,
-				D5B0A7CE22B21A8F00D329B8 /* CustomViewBase.swift */,
-				D5B0A7C022B209E200D329B8 /* FoodModel.swift */,
-				D5B0A7D122B242E100D329B8 /* FoodCardSetView.xib */,
 				D5B0A7D722B2A02B00D329B8 /* MockFoodPresenter.swift */,
+				D5B0A7C022B209E200D329B8 /* FoodModel.swift */,
+				D5B0A7C822B20E2200D329B8 /* FoodCardSetView.swift */,
+				D5B0A7D122B242E100D329B8 /* FoodCardSetView.xib */,
+				D5B0A7CE22B21A8F00D329B8 /* CustomViewBase.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
