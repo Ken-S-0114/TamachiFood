@@ -23,11 +23,10 @@ protocol FoodCardSetViewProtocol: NSObject {
 }
 
 class FoodCardSetView: CustomViewBase {
-    
     @IBOutlet private weak var storeNameLabel: UILabel!
     @IBOutlet private weak var foodNameLabel: UILabel!
     @IBOutlet private weak var remarkLabel: UILabel!
-    //@IBOutlet private weak var foodImageView: UIImageView!
+    // @IBOutlet private weak var foodImageView: UIImageView!
     @IBOutlet private weak var readmoreButton: UIButton!
     
     private var initialCenter: CGPoint = CGPoint(
@@ -80,6 +79,7 @@ class FoodCardSetView: CustomViewBase {
         remarkLabel.text = "New"
         // foodImageView.image = UIImage.init()
     }
+    
     // Viewに対する初期設定
     private func setupFoodCardSetView() {
         clipsToBounds = true
@@ -184,8 +184,8 @@ class FoodCardSetView: CustomViewBase {
     // Viewの初期状態での傾きと切片の付与を行う
     private func setupSlopeAndIntercept() {
         // 中心位置のゆらぎを表現する値を設定
-        let fluctuationsPosX: CGFloat = CGFloat(Int.random(in: Range(-8...8)))
-        let fluctuationsPosY: CGFloat = CGFloat(Int.random(in: Range(-8...8)))
+        let fluctuationsPosX: CGFloat = CGFloat(Int.createRandom(range: Range(-8 ... 8)))
+        let fluctuationsPosY: CGFloat = CGFloat(Int.createRandom(range: Range(-8 ... 8)))
         
         let initialCenterPosX: CGFloat = UIScreen.main.bounds.size.width / 2
         let initialCenterPosY: CGFloat = UIScreen.main.bounds.size.height / 2
@@ -197,7 +197,7 @@ class FoodCardSetView: CustomViewBase {
         )
         
         // 傾きのゆらぎを表現する値を設定する
-        let fluctuationsRotateAngle: CGFloat = CGFloat(Int.random(in: Range(-6...6)))
+        let fluctuationsRotateAngle: CGFloat = CGFloat(Int.createRandom(range: Range(-6 ... 6)))
         let angle = fluctuationsRotateAngle * .pi / 180.0 * 0.25
         
         initialTransform = CGAffineTransform(rotationAngle: angle)
@@ -208,11 +208,11 @@ class FoodCardSetView: CustomViewBase {
     
     // カードを初期配置する位置へ戻す
     private func moveInitialPosition() {
-        let beforeInitializePosX: CGFloat = CGFloat(Int.random(in: Range(-300 ... 300)))
-        let beforeInitializePosY: CGFloat = CGFloat(-Int.random(in: Range(300 ... 600)))
+        let beforeInitializePosX: CGFloat = CGFloat(Int.createRandom(range: Range(-300 ... 300)))
+        let beforeInitializePosY: CGFloat = CGFloat(-Int.createRandom(range: Range(300 ... 600)))
         let beforeInitializeCenter = CGPoint(x: beforeInitializePosX, y: beforeInitializePosY)
         
-        let beforeInitializeRotateAngle: CGFloat = CGFloat(Int.random(in: Range(-90 ... 90)))
+        let beforeInitializeRotateAngle: CGFloat = CGFloat(Int.createRandom(range: Range(-90 ... 90)))
         let angle = beforeInitializeRotateAngle * .pi / 180.0
         let beforeInitializeTransform = CGAffineTransform(rotationAngle: angle)
         beforeInitializeTransform.scaledBy(x: beforeInitializeScale, y: beforeInitializeScale)
@@ -248,10 +248,10 @@ class FoodCardSetView: CustomViewBase {
         let endCenterPosition = CGPoint(x: endCenterPosX, y: endCenterPosY)
         
         UIView.animate(withDuration: durationOfSwipeOut, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.0, options: [.curveEaseInOut], animations: {
-            self.alpha  = self.stopDraggingAlpha
+            self.alpha = self.stopDraggingAlpha
             self.center = endCenterPosition
         }, completion: { _ in
-            let _ = isLeft ? self.delegate?.swipedLeftPosition(self) : self.delegate?.swipedRightPosition(self)
+            _ = isLeft ? self.delegate?.swipedLeftPosition(self) : self.delegate?.swipedRightPosition(self)
             
             self.removeFromSuperview()
         })
