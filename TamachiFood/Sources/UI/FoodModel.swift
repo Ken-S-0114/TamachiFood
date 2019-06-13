@@ -13,7 +13,7 @@ struct FoodModel {
     let foodName: String
     let storeName: String
     let foodPrice: Int
-    let url: URL
+    // let url: URL
 }
 
 extension FoodModel: Equatable {

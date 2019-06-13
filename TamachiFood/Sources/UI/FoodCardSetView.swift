@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol FoodCardSetViewProtocol: NSObject {
+protocol FoodCardSetViewProtocol: NSObjectProtocol {
     // ドラッグ開始時に実行されるアクション
     func beganDragging(_ cardView: FoodCardSetView)
     // 位置の変化が生じた際に実行されるアクション
@@ -73,7 +73,7 @@ class FoodCardSetView: CustomViewBase {
         setupSlopeAndIntercept()
     }
     
-    func setData() {
+    func setViewData(_ food: FoodModel) {
         storeNameLabel.text = "Sample"
         foodNameLabel.text = "SampleSample"
         remarkLabel.text = "New"
