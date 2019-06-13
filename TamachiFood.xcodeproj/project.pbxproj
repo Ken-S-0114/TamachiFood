@@ -24,6 +24,7 @@
 		D5B0A7CD22B2157A00D329B8 /* FoodCardDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7CC22B2157A00D329B8 /* FoodCardDefaultSettings.swift */; };
 		D5B0A7CF22B21A8F00D329B8 /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7CE22B21A8F00D329B8 /* CustomViewBase.swift */; };
 		D5B0A7D222B242E100D329B8 /* FoodCardSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5B0A7D122B242E100D329B8 /* FoodCardSetView.xib */; };
+		D5B0A7D422B249E500D329B8 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7D322B249E500D329B8 /* IntExtension.swift */; };
 		EAC9147B445D4ADA06F1EE18 /* Pods_TamachiFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A18559E83BFD1CDC95A8015 /* Pods_TamachiFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		D5B0A7CC22B2157A00D329B8 /* FoodCardDefaultSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardDefaultSettings.swift; sourceTree = "<group>"; };
 		D5B0A7CE22B21A8F00D329B8 /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
 		D5B0A7D122B242E100D329B8 /* FoodCardSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCardSetView.xib; sourceTree = "<group>"; };
+		D5B0A7D322B249E500D329B8 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		E489578C61EC859161371865 /* Pods-TamachiFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodUITests.release.xcconfig"; path = "Target Support Files/Pods-TamachiFoodUITests/Pods-TamachiFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				D5B0A7D022B2245B00D329B8 /* Protocol */,
 				D5B0A7BC22B203D100D329B8 /* UI */,
 				D5B0A7BB22B203C200D329B8 /* Common */,
+				D5B0A7D322B249E500D329B8 /* IntExtension.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				B22E599222B009A300D0AB2B /* R.generated.swift in Sources */,
 				D5B0A7CB22B2141E00D329B8 /* FoodCardSetting.swift in Sources */,
 				D5B0A7BE22B2055F00D329B8 /* FoodCardSetViewController.swift in Sources */,
+				D5B0A7D422B249E500D329B8 /* IntExtension.swift in Sources */,
 				D5B0A7CD22B2157A00D329B8 /* FoodCardDefaultSettings.swift in Sources */,
 				D5B0A7C922B20E2200D329B8 /* FoodCardSetView.swift in Sources */,
 				D5B0A7C122B209E200D329B8 /* FoodModel.swift in Sources */,
