@@ -120,7 +120,7 @@ class FoodCardSetView: CustomViewBase {
                 y: center.y - yPositionFromCenter
             )
             delegate?.beganDragging(self)
-            // Debug.
+
             debugPrint("beganCenterX:", originalPoint.x)
             debugPrint("beganCenterY:", originalPoint.y)
             
@@ -138,7 +138,6 @@ class FoodCardSetView: CustomViewBase {
             currentMoveXPercentFromCenter = min(xPositionFromCenter / UIScreen.main.bounds.size.width, 1)
             currentMoveYPercentFromCenter = min(yPositionFromCenter / UIScreen.main.bounds.size.height, 1)
             
-            // Debug.
             debugPrint("currentMoveXPercentFromCenter:", currentMoveXPercentFromCenter)
             debugPrint("currentMoveYPercentFromCenter:", currentMoveYPercentFromCenter)
             
@@ -152,7 +151,7 @@ class FoodCardSetView: CustomViewBase {
         case .ended, .cancelled:
             // ドラッグ終了時点での速度を算出
             let whenEndedVelocity = sender.velocity(in: self)
-            // Debug.
+
             debugPrint("whenEndedVelocity:", whenEndedVelocity)
             
             let shouldMoveToLeft = (currentMoveXPercentFromCenter < -swipeXPosLimitRatio && abs(currentMoveYPercentFromCenter) > swipeYPosLimitRatio)

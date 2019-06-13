@@ -64,7 +64,7 @@ class FoodCardDefaultSettings: FoodCardSetting {
     
     static var maxScaleOfDragging: CGFloat = 1.00
     
-    static var swipeXPosLimitRatio: CGFloat = 0.54
+    static var swipeXPosLimitRatio: CGFloat = 0.3
     
     static var swipeYPosLimitRatio: CGFloat = 0.12
 }

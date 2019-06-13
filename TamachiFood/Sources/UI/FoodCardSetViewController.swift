@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class FoodCardSetViewController: UIViewController {
     fileprivate var foodCardSetViewList: [FoodCardSetView] = []
@@ -105,6 +106,7 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
     
     func swipedLeftPosition(_ cardView: FoodCardSetView) {
         debugPrint("左方向へのスワイプ完了しました。")
+        AudioServicesPlaySystemSound(1520)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
@@ -112,6 +114,7 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
     
     func swipedRightPosition(_ cardView: FoodCardSetView) {
         debugPrint("右方向へのスワイプ完了しました。")
+        AudioServicesPlaySystemSound(1520)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
