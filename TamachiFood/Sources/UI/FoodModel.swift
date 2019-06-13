@@ -9,7 +9,7 @@
 import Foundation
 
 struct FoodModel {
-    let id: Int
+    let foodId: Int
     let foodName: String
     let storeName: String
     let foodPrice: Int
@@ -18,6 +18,6 @@ struct FoodModel {
 
 extension FoodModel: Equatable {
     static func == (lhs: FoodModel, rhs: FoodModel) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.foodId == rhs.foodId
     }
 }

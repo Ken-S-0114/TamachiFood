@@ -1,5 +1,5 @@
 //
-//  SelectFoodViewController.swift
+//  FoodCardSetViewController.swift
 //  TamachiFood
 //
 //  Created by sato.ken on 2019/06/13.
@@ -9,10 +9,8 @@
 import Firebase
 import UIKit
 
-class SelectFoodViewController: UIViewController {
-    
+class FoodCardSetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }
