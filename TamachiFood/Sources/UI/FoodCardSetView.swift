@@ -23,10 +23,11 @@ protocol FoodCardSetViewProtocol: NSObject {
 }
 
 class FoodCardSetView: CustomViewBase {
+    
     @IBOutlet private weak var storeNameLabel: UILabel!
     @IBOutlet private weak var foodNameLabel: UILabel!
     @IBOutlet private weak var remarkLabel: UILabel!
-    @IBOutlet private weak var foodImageView: UIImageView!
+    //@IBOutlet private weak var foodImageView: UIImageView!
     @IBOutlet private weak var readmoreButton: UIButton!
     
     private var initialCenter: CGPoint = CGPoint(
@@ -70,8 +71,15 @@ class FoodCardSetView: CustomViewBase {
         setupFoodCardSetView()
         setupReadMoreButton()
         setupPanGestureRecognizer()
+        setupSlopeAndIntercept()
     }
     
+    func setData() {
+        storeNameLabel.text = "Sample"
+        foodNameLabel.text = "SampleSample"
+        remarkLabel.text = "New"
+        // foodImageView.image = UIImage.init()
+    }
     // Viewに対する初期設定
     private func setupFoodCardSetView() {
         clipsToBounds = true
