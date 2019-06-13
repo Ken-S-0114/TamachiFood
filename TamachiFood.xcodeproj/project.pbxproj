@@ -18,6 +18,7 @@
 		B22E599222B009A300D0AB2B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E599122B009A300D0AB2B /* R.generated.swift */; };
 		D5B0A7BE22B2055F00D329B8 /* SelectFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7BD22B2055F00D329B8 /* SelectFoodViewController.swift */; };
 		D5B0A7BF22B2061000D329B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5B0A7BA22B203B200D329B8 /* GoogleService-Info.plist */; };
+		D5B0A7C122B209E200D329B8 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7C022B209E200D329B8 /* FoodModel.swift */; };
 		EAC9147B445D4ADA06F1EE18 /* Pods_TamachiFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A18559E83BFD1CDC95A8015 /* Pods_TamachiFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		B22E599122B009A300D0AB2B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D5B0A7BA22B203B200D329B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5B0A7BD22B2055F00D329B8 /* SelectFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFoodViewController.swift; sourceTree = "<group>"; };
+		D5B0A7C022B209E200D329B8 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
 		E489578C61EC859161371865 /* Pods-TamachiFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodUITests.release.xcconfig"; path = "Target Support Files/Pods-TamachiFoodUITests/Pods-TamachiFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 				B22E596322AFE56200D0AB2B /* Main.storyboard */,
 				B22E596822AFE56500D0AB2B /* LaunchScreen.storyboard */,
 				D5B0A7BD22B2055F00D329B8 /* SelectFoodViewController.swift */,
+				D5B0A7C022B209E200D329B8 /* FoodModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				B22E596022AFE56200D0AB2B /* AppDelegate.swift in Sources */,
 				B22E599222B009A300D0AB2B /* R.generated.swift in Sources */,
 				D5B0A7BE22B2055F00D329B8 /* SelectFoodViewController.swift in Sources */,
+				D5B0A7C122B209E200D329B8 /* FoodModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
