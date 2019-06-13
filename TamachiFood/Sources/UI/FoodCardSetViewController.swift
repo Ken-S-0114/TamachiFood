@@ -6,8 +6,8 @@
 //  Copyright © 2019 佐藤賢. All rights reserved.
 //
 
-import UIKit
 import AudioToolbox
+import UIKit
 
 class FoodCardSetViewController: UIViewController {
     fileprivate var foodCardSetViewList: [FoodCardSetView] = []
