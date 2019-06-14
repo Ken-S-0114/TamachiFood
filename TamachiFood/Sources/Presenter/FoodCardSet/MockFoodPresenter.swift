@@ -37,7 +37,7 @@ class MockFoodPresenter {
         return presenter.bindFoods(foods)
     }
     
-    func getFood(index: Int) -> FoodModel {
+    func getFood(at index: Int) -> FoodModel {
         return mockModel[index]
     }
 }

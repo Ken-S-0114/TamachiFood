@@ -15,6 +15,7 @@ class FoodCardSetViewController: UIViewController {
     fileprivate var presenter: MockFoodPresenter!
     fileprivate let foodCardSetViewCountLimit: Int = 16
     
+    private var count = 0
     // インスタンス変数
     private var DBRef: DatabaseReference!
     
@@ -99,7 +100,7 @@ class FoodCardSetViewController: UIViewController {
             "evaluation": evaluation
         ]
         
-        DBRef.child("food").setValue(data)
+        DBRef.child("food").child("\(food.foodId)").setValue(data)
     }
 }
 
@@ -125,8 +126,8 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
-        presenter.getFoods()
-        addDataFirebase(presenter.getFood(index: 0), isLeft: true)
+        addDataFirebase(presenter.getFood(at: count), isLeft: true)
+        count += 1
     }
     
     func swipedRightPosition(_ cardView: FoodCardSetView) {
@@ -135,7 +136,8 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
-        // addDataFirebase(<#T##food: FoodModel##FoodModel#>, isLeft: false)
+        addDataFirebase(presenter.getFood(at: count), isLeft: false)
+        count += 1
     }
     
     func returnToOriginalPosition(_ cardView: FoodCardSetView) {
