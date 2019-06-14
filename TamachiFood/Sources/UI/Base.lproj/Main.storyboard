@@ -1,55 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6tI-pN-9BH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nSc-cD-24s">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--田町フード-->
-        <scene sceneID="tne-QT-ifu">
+        <!--FoodCardSetViewController-->
+        <scene sceneID="qIk-Vj-A7V">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FoodCardSetViewController" customModule="TamachiFood" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="田町フード" id="TKD-34-NH4">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" id="AGT-sr-Pc6">
-                            <connections>
-                                <action selector="dismissButtonTapped:" destination="BYZ-38-t0r" id="Epm-SF-f1K"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="追加" id="3WI-rz-oRx">
-                            <connections>
-                                <action selector="addCardButtonTapped:" destination="BYZ-38-t0r" id="HJO-B8-xSE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="FoodCardSetViewController" id="GxI-Dj-dYb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="GfA-6Y-bdt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wp-Ch-nIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464" y="21"/>
+            <point key="canvasLocation" x="357" y="27"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pHk-uf-r97">
+        <!--Tab Bar Controller-->
+        <scene sceneID="Cqb-nq-Aeh">
             <objects>
-                <navigationController id="6tI-pN-9BH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jkp-cy-THg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                <tabBarController id="nSc-cD-24s" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fXg-Er-6dG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vEM-Ab-Ysv"/>
+                        <segue destination="GxI-Dj-dYb" kind="relationship" relationship="viewControllers" id="OJY-hr-ATi"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x8L-0I-lXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9r-b9-0Vb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-871" y="344"/>
         </scene>
     </scenes>
 </document>

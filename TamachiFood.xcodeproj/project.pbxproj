@@ -16,6 +16,7 @@
 		B22E597522AFE56500D0AB2B /* TamachiFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597422AFE56500D0AB2B /* TamachiFoodTests.swift */; };
 		B22E598022AFE56500D0AB2B /* TamachiFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */; };
 		B22E599222B009A300D0AB2B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E599122B009A300D0AB2B /* R.generated.swift */; };
+		D50C8B2222B31F8A000689B2 /* FoodCardSetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50C8B2122B31F8A000689B2 /* FoodCardSetViewController.storyboard */; };
 		D5B0A7BE22B2055F00D329B8 /* FoodCardSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7BD22B2055F00D329B8 /* FoodCardSetViewController.swift */; };
 		D5B0A7BF22B2061000D329B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5B0A7BA22B203B200D329B8 /* GoogleService-Info.plist */; };
 		D5B0A7C122B209E200D329B8 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7C022B209E200D329B8 /* FoodModel.swift */; };
@@ -68,6 +69,7 @@
 		B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamachiFoodUITests.swift; sourceTree = "<group>"; };
 		B22E598122AFE56500D0AB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B22E599122B009A300D0AB2B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D50C8B2122B31F8A000689B2 /* FoodCardSetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodCardSetViewController.storyboard; sourceTree = "<group>"; };
 		D5B0A7BA22B203B200D329B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5B0A7BD22B2055F00D329B8 /* FoodCardSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardSetViewController.swift; sourceTree = "<group>"; };
 		D5B0A7C022B209E200D329B8 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				D5B0A7C822B20E2200D329B8 /* FoodCardSetView.swift */,
 				D5B0A7D122B242E100D329B8 /* FoodCardSetView.xib */,
 				D5B0A7CE22B21A8F00D329B8 /* CustomViewBase.swift */,
+				D50C8B2122B31F8A000689B2 /* FoodCardSetViewController.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50C8B2222B31F8A000689B2 /* FoodCardSetViewController.storyboard in Resources */,
 				B22E596A22AFE56500D0AB2B /* LaunchScreen.storyboard in Resources */,
 				D5B0A7BF22B2061000D329B8 /* GoogleService-Info.plist in Resources */,
 				B22E596722AFE56500D0AB2B /* Assets.xcassets in Resources */,
