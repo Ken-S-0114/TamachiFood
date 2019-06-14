@@ -16,7 +16,6 @@
 		B22E597522AFE56500D0AB2B /* TamachiFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597422AFE56500D0AB2B /* TamachiFoodTests.swift */; };
 		B22E598022AFE56500D0AB2B /* TamachiFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */; };
 		B22E599222B009A300D0AB2B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E599122B009A300D0AB2B /* R.generated.swift */; };
-		D50C8B2222B31F8A000689B2 /* FoodCardSetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50C8B2122B31F8A000689B2 /* FoodCardSetViewController.storyboard */; };
 		D5B0A7BE22B2055F00D329B8 /* FoodCardSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7BD22B2055F00D329B8 /* FoodCardSetViewController.swift */; };
 		D5B0A7BF22B2061000D329B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5B0A7BA22B203B200D329B8 /* GoogleService-Info.plist */; };
 		D5B0A7C122B209E200D329B8 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0A7C022B209E200D329B8 /* FoodModel.swift */; };
@@ -30,6 +29,7 @@
 		D5EC776922B35D1900363011 /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EC776822B35D1900363011 /* FoodListViewController.swift */; };
 		D5EC776C22B35D6500363011 /* FoodList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EC776B22B35D6500363011 /* FoodList.storyboard */; };
 		D5EC776F22B361C000363011 /* FoodListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EC776E22B361C000363011 /* FoodListPresenter.swift */; };
+		D5EC777322B36D0900363011 /* FoodCardSet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EC777222B36D0900363011 /* FoodCardSet.storyboard */; };
 		EAC9147B445D4ADA06F1EE18 /* Pods_TamachiFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A18559E83BFD1CDC95A8015 /* Pods_TamachiFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +72,6 @@
 		B22E597F22AFE56500D0AB2B /* TamachiFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamachiFoodUITests.swift; sourceTree = "<group>"; };
 		B22E598122AFE56500D0AB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B22E599122B009A300D0AB2B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		D50C8B2122B31F8A000689B2 /* FoodCardSetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodCardSetViewController.storyboard; sourceTree = "<group>"; };
 		D5B0A7BA22B203B200D329B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5B0A7BD22B2055F00D329B8 /* FoodCardSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardSetViewController.swift; sourceTree = "<group>"; };
 		D5B0A7C022B209E200D329B8 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		D5EC776822B35D1900363011 /* FoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
 		D5EC776B22B35D6500363011 /* FoodList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodList.storyboard; sourceTree = "<group>"; };
 		D5EC776E22B361C000363011 /* FoodListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListPresenter.swift; sourceTree = "<group>"; };
+		D5EC777222B36D0900363011 /* FoodCardSet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodCardSet.storyboard; sourceTree = "<group>"; };
 		E489578C61EC859161371865 /* Pods-TamachiFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamachiFoodUITests.release.xcconfig"; path = "Target Support Files/Pods-TamachiFoodUITests/Pods-TamachiFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,10 +252,10 @@
 		D50C8B2B22B3218C000689B2 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				D50C8B2C22B32199000689B2 /* FoodCardSet */,
 				D5EC776A22B35D4D00363011 /* FoodList */,
 				B22E596822AFE56500D0AB2B /* LaunchScreen.storyboard */,
 				B22E596322AFE56200D0AB2B /* Main.storyboard */,
-				D50C8B2C22B32199000689B2 /* FoodCardSet */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 		D50C8B2C22B32199000689B2 /* FoodCardSet */ = {
 			isa = PBXGroup;
 			children = (
-				D50C8B2122B31F8A000689B2 /* FoodCardSetViewController.storyboard */,
+				D5EC777222B36D0900363011 /* FoodCardSet.storyboard */,
 			);
 			path = FoodCardSet;
 			sourceTree = "<group>";
@@ -453,9 +453,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D50C8B2222B31F8A000689B2 /* FoodCardSetViewController.storyboard in Resources */,
 				B22E596A22AFE56500D0AB2B /* LaunchScreen.storyboard in Resources */,
 				D5B0A7BF22B2061000D329B8 /* GoogleService-Info.plist in Resources */,
+				D5EC777322B36D0900363011 /* FoodCardSet.storyboard in Resources */,
 				B22E596722AFE56500D0AB2B /* Assets.xcassets in Resources */,
 				B22E596522AFE56200D0AB2B /* Main.storyboard in Resources */,
 				D5EC776C22B35D6500363011 /* FoodList.storyboard in Resources */,

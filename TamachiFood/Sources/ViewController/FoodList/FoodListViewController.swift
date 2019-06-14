@@ -8,17 +8,18 @@
 
 import UIKit
 
-// class FoodListViewController: UIViewController {
-//    @IBOutlet weak var foodSearchBar: UISearchBar!
-//    @IBOutlet weak var evaluationSegmentedControl: UISegmentedControl!
-//    @IBOutlet weak var foodCollectionView: UICollectionView!
+class FoodListViewController: UIViewController {
+    @IBOutlet weak var foodSearchBar: UISearchBar!
+    @IBOutlet weak var evaluationSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var foodCollectionView: UICollectionView!
 //
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 //        self.foodCollectionView.delegate = self
 //        self.foodCollectionView.dataSource = self
-//    }
-// }
+    }
+}
+
 //
 // extension FoodListViewController: UICollectionViewDelegate {}
 //

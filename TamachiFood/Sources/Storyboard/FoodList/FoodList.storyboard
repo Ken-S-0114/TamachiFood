@@ -12,6 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="nNp-Pm-YR0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHa-hu-Yfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="vqg-7l-tOI" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tjb-rV-AeS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -21,7 +22,6 @@
                         <segue destination="dIO-lD-df4" kind="relationship" relationship="rootViewController" id="JC0-bz-k40"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PHa-hu-Yfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1232" y="150"/>
         </scene>
@@ -46,7 +46,7 @@
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a5P-nN-seW">
-                                <rect key="frame" x="0.0" y="172" width="414" height="690"/>
+                                <rect key="frame" x="10" y="182" width="394" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tSb-aO-QmM">
                                     <size key="itemSize" width="50" height="50"/>
@@ -81,11 +81,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="N3U-de-BSj" firstAttribute="trailing" secondItem="KKJ-8m-72K" secondAttribute="trailing" id="Gj8-L8-qAy"/>
-                            <constraint firstItem="a5P-nN-seW" firstAttribute="top" secondItem="BqF-tD-HIy" secondAttribute="bottom" id="MhP-dU-2Ae"/>
+                            <constraint firstItem="a5P-nN-seW" firstAttribute="top" secondItem="BqF-tD-HIy" secondAttribute="bottom" constant="10" id="MhP-dU-2Ae"/>
                             <constraint firstItem="N3U-de-BSj" firstAttribute="leading" secondItem="KKJ-8m-72K" secondAttribute="leading" id="RfJ-tQ-KJp"/>
-                            <constraint firstItem="KKJ-8m-72K" firstAttribute="trailing" secondItem="a5P-nN-seW" secondAttribute="trailing" id="TAO-IY-i0c"/>
-                            <constraint firstItem="KKJ-8m-72K" firstAttribute="bottom" secondItem="a5P-nN-seW" secondAttribute="bottom" id="To9-mk-53o"/>
-                            <constraint firstItem="a5P-nN-seW" firstAttribute="leading" secondItem="KKJ-8m-72K" secondAttribute="leading" id="tU8-1G-1Og"/>
+                            <constraint firstItem="KKJ-8m-72K" firstAttribute="trailing" secondItem="a5P-nN-seW" secondAttribute="trailing" constant="10" id="TAO-IY-i0c"/>
+                            <constraint firstItem="KKJ-8m-72K" firstAttribute="bottom" secondItem="a5P-nN-seW" secondAttribute="bottom" constant="100" id="To9-mk-53o"/>
+                            <constraint firstItem="a5P-nN-seW" firstAttribute="leading" secondItem="KKJ-8m-72K" secondAttribute="leading" constant="10" id="tU8-1G-1Og"/>
                             <constraint firstItem="BqF-tD-HIy" firstAttribute="top" secondItem="N3U-de-BSj" secondAttribute="bottom" id="uLP-qx-RJc"/>
                             <constraint firstItem="BqF-tD-HIy" firstAttribute="leading" secondItem="KKJ-8m-72K" secondAttribute="leading" id="vVl-xB-naT"/>
                             <constraint firstItem="KKJ-8m-72K" firstAttribute="trailing" secondItem="BqF-tD-HIy" secondAttribute="trailing" id="xOO-VL-yHs"/>

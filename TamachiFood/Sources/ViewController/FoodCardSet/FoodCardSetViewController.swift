@@ -14,7 +14,6 @@ class FoodCardSetViewController: UIViewController {
     fileprivate var presenter: MockFoodPresenter!
     fileprivate let foodCardSetViewCountLimit: Int = 10
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFoodPresenter()
@@ -22,12 +21,6 @@ class FoodCardSetViewController: UIViewController {
     
     private func setupFoodPresenter() {
         presenter = MockFoodPresenter(presenter: self)
-    }
-    
-    // 戻るボタンに関する設定を行う
-    private func setupDismissButton() {
-        navigationItem.leftBarButtonItem =
-            UIBarButtonItem(title: "戻る", style: .done, target: self, action: #selector(dismissButtonTapped))
     }
     
     @IBAction func addCardButtonTapped(_ sender: UIBarButtonItem) {
@@ -86,7 +79,6 @@ class FoodCardSetViewController: UIViewController {
             targetCount += 1
         }
     }
-    
 }
 
 extension FoodCardSetViewController: MockFoodPresenterProtocol {
@@ -116,7 +108,7 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
     
     func swipedRightPosition(_ cardView: FoodCardSetView) {
         debugPrint("右方向へのスワイプ完了しました。")
-        AudioServicesPlaySystemSound(1520)
+        AudioServicesPlaySystemSound(1102)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)

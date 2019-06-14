@@ -9,13 +9,13 @@
 import Firebase
 import Foundation
 
-protocol FoodListPresenterProtocol: AnyObject {
-    // func bindFoods(_ foods: [FoodFirebaseModel])
-}
-
+// protocol FoodListPresenterProtocol: AnyObject {
+//    func bindFoods(_ foods: [FoodModel])
+// }
+//
 // class FoodListPresenter: FoodListPresenterProtocol {
 //    var presenter: FoodListPresenterProtocol!
-//    var DBRef: DatabaseReference!
+//    private var DBRef: DatabaseReference!
 //
 //    init(presenter: FoodListPresenterProtocol) {
 //        self.presenter = presenter
@@ -23,9 +23,15 @@ protocol FoodListPresenterProtocol: AnyObject {
 //    }
 //
 //    func fetchFoodsFromDatabase() {
+//        var foodsName: [String] = []
 //        let defaultPlace = DBRef.child("food")
-//        defaultPlace.observe(.value) { (snap: DataSnapshot) in
-//
+//        defaultPlace.observeSingleEvent(of: .value) { (snapshot) in
+//            for folder in snapshot.children {
+//                if let snap = folder as? DataSnapshot {
+//                    foodsName.append(folder.foodName)
+//                }
+//            }
+//        }
 //        self.presenter.bindFoods(<#T##foods: [FoodFirebaseModel]##[FoodFirebaseModel]#>)
 //    }
 //

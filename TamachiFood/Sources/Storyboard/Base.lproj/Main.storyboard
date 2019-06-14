@@ -5,28 +5,25 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FoodCardSetViewController-->
+        <!--FoodCardSet-->
         <scene sceneID="qIk-Vj-A7V">
             <objects>
-                <viewControllerPlaceholder storyboardName="FoodCardSetViewController" id="GxI-Dj-dYb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="GfA-6Y-bdt"/>
-                </viewControllerPlaceholder>
+                <viewControllerPlaceholder storyboardName="FoodCardSet" id="GxI-Dj-dYb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wp-Ch-nIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357" y="27"/>
+            <point key="canvasLocation" x="-776" y="-98"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--FoodList-->
         <scene sceneID="vaO-BC-3gj">
             <objects>
-                <viewControllerPlaceholder id="lce-0q-XRd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="JB9-Sd-Gz6"/>
-                </viewControllerPlaceholder>
+                <viewControllerPlaceholder storyboardName="FoodList" id="lce-0q-XRd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u55-Lm-IUl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="520"/>
+            <point key="canvasLocation" x="-683" y="794"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cqb-nq-Aeh">
@@ -38,12 +35,154 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GxI-Dj-dYb" kind="relationship" relationship="viewControllers" id="OJY-hr-ATi"/>
+                        <segue destination="0OR-9A-Its" kind="relationship" relationship="viewControllers" id="mLn-jh-gof"/>
+                        <segue destination="Ion-bB-YlI" kind="relationship" relationship="viewControllers" id="g3N-2E-nPX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9r-b9-0Vb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-871" y="344"/>
+        </scene>
+        <!--田町フード-->
+        <scene sceneID="LSR-ve-G6Y">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgM-6Z-KUA" sceneMemberID="firstResponder"/>
+                <viewController id="CR2-rU-oam" customClass="FoodCardSetViewController" customModule="TamachiFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bpv-rP-OQQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9Dq-F9-IIj"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="HtI-Ax-Tq1"/>
+                    <navigationItem key="navigationItem" title="田町フード" id="658-hM-it0">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="bzk-mm-p91">
+                            <connections>
+                                <action selector="dismissButtonTapped:" destination="CR2-rU-oam" id="6fi-KF-mA3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="追加" id="1gE-NG-8Xe">
+                            <connections>
+                                <action selector="addCardButtonTapped:" destination="CR2-rU-oam" id="nsd-rU-PVv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1084" y="21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ClO-Q2-e9P">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7VR-U2-bCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="0OR-9A-Its" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="iHC-Bg-7KN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6m5-ju-paT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CR2-rU-oam" kind="relationship" relationship="rootViewController" id="qV4-sT-pFr"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="29" y="21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FGd-V2-af8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WO-q3-5zY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Ion-bB-YlI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="N6W-uc-Me3"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g8X-ac-LN2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Nqu-9E-gon" kind="relationship" relationship="rootViewController" id="hXr-nO-I08"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="29" y="759"/>
+        </scene>
+        <!--ランチリスト-->
+        <scene sceneID="Ctp-5f-Eze">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dw-9f-sJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Nqu-9E-gon" customClass="FoodListViewController" customModule="TamachiFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E0r-Oq-B8q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="odM-HZ-KA4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MoQ-yU-Fcz">
+                                <rect key="frame" x="0.0" y="144" width="414" height="29"/>
+                                <segments>
+                                    <segment title="全て"/>
+                                    <segment title="好き"/>
+                                    <segment title="嫌い"/>
+                                </segments>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nKq-xF-JPq">
+                                <rect key="frame" x="10" y="182" width="394" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Zd-lX-5fX">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="D1h-BR-z1P">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0j-Z7-lkK">
+                                                    <rect key="frame" x="4" y="14.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="h0j-Z7-lkK" firstAttribute="centerX" secondItem="D1h-BR-z1P" secondAttribute="centerX" id="7bC-tP-8nx"/>
+                                            <constraint firstItem="h0j-Z7-lkK" firstAttribute="centerY" secondItem="D1h-BR-z1P" secondAttribute="centerY" id="elu-ZN-DF6"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rVZ-vQ-nDh" firstAttribute="trailing" secondItem="MoQ-yU-Fcz" secondAttribute="trailing" id="1nf-DK-su0"/>
+                            <constraint firstItem="rVZ-vQ-nDh" firstAttribute="bottom" secondItem="nKq-xF-JPq" secondAttribute="bottom" constant="100" id="284-bH-QBx"/>
+                            <constraint firstItem="rVZ-vQ-nDh" firstAttribute="trailing" secondItem="nKq-xF-JPq" secondAttribute="trailing" constant="10" id="5xd-gj-h2g"/>
+                            <constraint firstItem="odM-HZ-KA4" firstAttribute="trailing" secondItem="rVZ-vQ-nDh" secondAttribute="trailing" id="KCJ-hU-IfW"/>
+                            <constraint firstItem="odM-HZ-KA4" firstAttribute="leading" secondItem="rVZ-vQ-nDh" secondAttribute="leading" id="Q6L-AM-Qi3"/>
+                            <constraint firstItem="nKq-xF-JPq" firstAttribute="leading" secondItem="rVZ-vQ-nDh" secondAttribute="leading" constant="10" id="SWb-Ia-4sO"/>
+                            <constraint firstItem="nKq-xF-JPq" firstAttribute="top" secondItem="MoQ-yU-Fcz" secondAttribute="bottom" constant="10" id="UeS-Ml-dnY"/>
+                            <constraint firstItem="MoQ-yU-Fcz" firstAttribute="leading" secondItem="rVZ-vQ-nDh" secondAttribute="leading" id="biA-bs-hnf"/>
+                            <constraint firstItem="odM-HZ-KA4" firstAttribute="top" secondItem="rVZ-vQ-nDh" secondAttribute="top" id="sbV-ZJ-F4L"/>
+                            <constraint firstItem="MoQ-yU-Fcz" firstAttribute="top" secondItem="odM-HZ-KA4" secondAttribute="bottom" id="wqz-yV-7eS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rVZ-vQ-nDh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ランチリスト" id="mRN-io-Jg6"/>
+                    <connections>
+                        <outlet property="evaluationSegmentedControl" destination="MoQ-yU-Fcz" id="Ahh-uc-iHH"/>
+                        <outlet property="foodCollectionView" destination="nKq-xF-JPq" id="Sjx-T2-NVj"/>
+                        <outlet property="foodSearchBar" destination="odM-HZ-KA4" id="Xwn-ih-AFO"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1083" y="759"/>
         </scene>
     </scenes>
 </document>
