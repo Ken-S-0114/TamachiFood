@@ -214,15 +214,18 @@ class FoodCardSetView: CustomViewBase {
     
     // カードを初期配置する位置へ戻す
     private func moveInitialPosition() {
+        // 表示前のカードの位置を設定
         let beforeInitializePosX: CGFloat = CGFloat(Int.createRandom(range: Range(-300 ... 300)))
         let beforeInitializePosY: CGFloat = CGFloat(-Int.createRandom(range: Range(300 ... 600)))
         let beforeInitializeCenter = CGPoint(x: beforeInitializePosX, y: beforeInitializePosY)
         
+        // 表示前のカードの傾きを設定
         let beforeInitializeRotateAngle: CGFloat = CGFloat(Int.createRandom(range: Range(-90 ... 90)))
         let angle = beforeInitializeRotateAngle * .pi / 180.0
         let beforeInitializeTransform = CGAffineTransform(rotationAngle: angle)
         beforeInitializeTransform.scaledBy(x: beforeInitializeScale, y: beforeInitializeScale)
         
+        // 画面外からアニメーションを伴って現れる動きを設定
         alpha = 0
         center = beforeInitializeCenter
         transform = beforeInitializeTransform

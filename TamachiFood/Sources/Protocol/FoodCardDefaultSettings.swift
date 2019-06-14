@@ -50,13 +50,13 @@ class FoodCardDefaultSettings: FoodCardSetting {
     
     static var afterInitializeScale: CGFloat = 1.00
     
-    static var durationOfInitialize: TimeInterval = 0.93
+    static var durationOfInitialize: TimeInterval = 1.50
     
-    static var durationOfStartDragging: TimeInterval = 0.26
+    static var durationOfStartDragging: TimeInterval = 0.25
     
-    static var durationOfReturnOriginal: TimeInterval = 0.26
+    static var durationOfReturnOriginal: TimeInterval = 0.25
     
-    static var durationOfSwipeOut: TimeInterval = 0.48
+    static var durationOfSwipeOut: TimeInterval = 0.50
     
     static var startDraggingAlpha: CGFloat = 0.98
     
@@ -64,7 +64,7 @@ class FoodCardDefaultSettings: FoodCardSetting {
     
     static var maxScaleOfDragging: CGFloat = 1.00
     
-    static var swipeXPosLimitRatio: CGFloat = 0.3
+    static var swipeXPosLimitRatio: CGFloat = 0.30
     
-    static var swipeYPosLimitRatio: CGFloat = 0.12
+    static var swipeYPosLimitRatio: CGFloat = 0.10
 }
