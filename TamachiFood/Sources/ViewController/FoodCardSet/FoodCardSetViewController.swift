@@ -7,7 +7,6 @@
 //
 
 import AudioToolbox
-import Firebase
 import UIKit
 
 class FoodCardSetViewController: UIViewController {
@@ -15,13 +14,10 @@ class FoodCardSetViewController: UIViewController {
     fileprivate var presenter: MockFoodPresenter!
     fileprivate let foodCardSetViewCountLimit: Int = 10
     
-    // インスタンス変数
-    private var DBRef: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFoodPresenter()
-        DBRef = Database.database().reference()
     }
     
     private func setupFoodPresenter() {
@@ -91,16 +87,6 @@ class FoodCardSetViewController: UIViewController {
         }
     }
     
-    private func addDataFirebase(_ food: FoodModel, isLeft: Bool) {
-        let evaluation: String = isLeft ? EvaluationStatus.like.changeStatusToStr() : EvaluationStatus.hate.changeStatusToStr()
-        let data = [
-            "storeName": food.storeName,
-            "foodName": food.foodName,
-            "evaluation": evaluation
-        ]
-        
-        DBRef.child("food").child("\(food.foodId)").setValue(data)
-    }
 }
 
 extension FoodCardSetViewController: MockFoodPresenterProtocol {
@@ -125,9 +111,7 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
-        // if foodCardSetViewCountLimit >  {
-        addDataFirebase(presenter.getFood(at: cardView.tag), isLeft: true)
-        // }
+        presenter.addDataFirebase(presenter.getFood(at: cardView.tag), isLeft: true)
     }
     
     func swipedRightPosition(_ cardView: FoodCardSetView) {
@@ -136,9 +120,7 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
-        // if foodCardSetViewCountLimit > index {
-        addDataFirebase(presenter.getFood(at: cardView.tag), isLeft: false)
-        // }
+        presenter.addDataFirebase(presenter.getFood(at: cardView.tag), isLeft: false)
     }
     
     func returnToOriginalPosition(_ cardView: FoodCardSetView) {

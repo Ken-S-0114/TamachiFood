@@ -6,6 +6,7 @@
 //  Copyright © 2019 佐藤賢. All rights reserved.
 //
 
+import Firebase
 import Foundation
 
 protocol MockFoodPresenterProtocol: AnyObject {
@@ -14,6 +15,8 @@ protocol MockFoodPresenterProtocol: AnyObject {
 
 class MockFoodPresenter {
     var presenter: MockFoodPresenterProtocol!
+    
+    private var DBRef: DatabaseReference!
     
     let mockModel: [FoodModel] = [
         FoodModel(foodId: 0, foodName: "カルボナーラ", storeName: "A店", foodPrice: 1000, evaluation: .deselect),
@@ -30,6 +33,7 @@ class MockFoodPresenter {
     
     init(presenter: MockFoodPresenterProtocol) {
         self.presenter = presenter
+        DBRef = Database.database().reference()
     }
     
     func getFoods() {
@@ -39,5 +43,16 @@ class MockFoodPresenter {
     
     func getFood(at index: Int) -> FoodModel {
         return mockModel[index]
+    }
+    
+    func addDataFirebase(_ food: FoodModel, isLeft: Bool) {
+        let evaluation: String = isLeft ? EvaluationStatus.like.changeStatusToStr() : EvaluationStatus.hate.changeStatusToStr()
+        let data = [
+            "storeName": food.storeName,
+            "foodName": food.foodName,
+            "evaluation": evaluation
+        ]
+        
+        DBRef.child("food").child("\(food.foodId)").setValue(data)
     }
 }
