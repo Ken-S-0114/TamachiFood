@@ -50,6 +50,7 @@ class FoodCardSetViewController: UIViewController {
             // URL
             
             foodCardSetView.isUserInteractionEnabled = false
+            foodCardSetView.tag = foods[index].foodId
             foodCardSetViewList.append(foodCardSetView)
             
             // 現在表示されているカードの背面へ新たに作成したカードを追加する
@@ -93,7 +94,6 @@ class FoodCardSetViewController: UIViewController {
     private func addDataFirebase(_ food: FoodModel, isLeft: Bool) {
         let evaluation: String = isLeft ? EvaluationStatus.like.changeStatusToStr() : EvaluationStatus.hate.changeStatusToStr()
         let data = [
-            "foodId": String(food.foodId),
             "storeName": food.storeName,
             "foodName": food.foodName,
             "evaluation": evaluation
@@ -119,26 +119,26 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
         debugPrint("移動した座標点 X軸:\(centerX) Y軸:\(centerY)")
     }
     
-    func swipedLeftPosition(_ cardView: FoodCardSetView, at index: Int) {
+    func swipedLeftPosition(_ cardView: FoodCardSetView) {
         debugPrint("左方向へのスワイプ完了しました。")
         AudioServicesPlaySystemSound(1520)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
-        if foodCardSetViewCountLimit > index {
-            addDataFirebase(presenter.getFood(at: index), isLeft: true)
-        }
+        // if foodCardSetViewCountLimit >  {
+        addDataFirebase(presenter.getFood(at: cardView.tag), isLeft: true)
+        // }
     }
     
-    func swipedRightPosition(_ cardView: FoodCardSetView, at index: Int) {
+    func swipedRightPosition(_ cardView: FoodCardSetView) {
         debugPrint("右方向へのスワイプ完了しました。")
         AudioServicesPlaySystemSound(1520)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
-        if foodCardSetViewCountLimit > index {
-            addDataFirebase(presenter.getFood(at: index), isLeft: false)
-        }
+        // if foodCardSetViewCountLimit > index {
+        addDataFirebase(presenter.getFood(at: cardView.tag), isLeft: false)
+        // }
     }
     
     func returnToOriginalPosition(_ cardView: FoodCardSetView) {

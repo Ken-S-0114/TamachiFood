@@ -15,9 +15,9 @@ protocol FoodCardSetViewProtocol: NSObjectProtocol {
     // 位置の変化が生じた際に実行されるアクション
     func updatePosition(_ cardView: FoodCardSetView, centerX: CGFloat, centerY: CGFloat)
     // 左側へのスワイプ動作が完了した場合に実行されるアクション
-    func swipedLeftPosition(_ cardView: FoodCardSetView, at index: Int)
+    func swipedLeftPosition(_ cardView: FoodCardSetView)
     // 右側へのスワイプ動作が完了した場合に実行されるアクション
-    func swipedRightPosition(_ cardView: FoodCardSetView, at index: Int)
+    func swipedRightPosition(_ cardView: FoodCardSetView)
     // 元の位置に戻る動作が完了したに実行されるアクション
     func returnToOriginalPosition(_ cardView: FoodCardSetView)
 }
@@ -63,8 +63,6 @@ class FoodCardSetView: CustomViewBase {
     weak var delegate: FoodCardSetViewProtocol?
     
     var readMoreButtonAction: (() -> Void)?
-    
-    var index: Int = 0
     
     override func initWith() {
         setupFoodCardSetView()
@@ -259,8 +257,7 @@ class FoodCardSetView: CustomViewBase {
             self.alpha = self.stopDraggingAlpha
             self.center = endCenterPosition
         }, completion: { _ in
-            _ = isLeft ? self.delegate?.swipedLeftPosition(self, at: self.index) : self.delegate?.swipedRightPosition(self, at: self.index)
-            self.index += 1
+            _ = isLeft ? self.delegate?.swipedLeftPosition(self) : self.delegate?.swipedRightPosition(self)
             self.removeFromSuperview()
         })
     }
