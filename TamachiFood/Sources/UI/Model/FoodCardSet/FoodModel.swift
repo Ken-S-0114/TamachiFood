@@ -13,6 +13,7 @@ struct FoodModel {
     let foodName: String
     let storeName: String
     let foodPrice: Int
+    var evaluation: Bool?
     // let url: URL
 }
 
