@@ -13,9 +13,8 @@ import UIKit
 class FoodCardSetViewController: UIViewController {
     fileprivate var foodCardSetViewList: [FoodCardSetView] = []
     fileprivate var presenter: MockFoodPresenter!
-    fileprivate let foodCardSetViewCountLimit: Int = 16
+    fileprivate let foodCardSetViewCountLimit: Int = 10
     
-    private var count = 0
     // インスタンス変数
     private var DBRef: DatabaseReference!
     
@@ -120,24 +119,26 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
         debugPrint("移動した座標点 X軸:\(centerX) Y軸:\(centerY)")
     }
     
-    func swipedLeftPosition(_ cardView: FoodCardSetView) {
+    func swipedLeftPosition(_ cardView: FoodCardSetView, at index: Int) {
         debugPrint("左方向へのスワイプ完了しました。")
         AudioServicesPlaySystemSound(1520)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
-        addDataFirebase(presenter.getFood(at: count), isLeft: true)
-        count += 1
+        if foodCardSetViewCountLimit > index {
+            addDataFirebase(presenter.getFood(at: index), isLeft: true)
+        }
     }
     
-    func swipedRightPosition(_ cardView: FoodCardSetView) {
+    func swipedRightPosition(_ cardView: FoodCardSetView, at index: Int) {
         debugPrint("右方向へのスワイプ完了しました。")
         AudioServicesPlaySystemSound(1520)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
-        addDataFirebase(presenter.getFood(at: count), isLeft: false)
-        count += 1
+        if foodCardSetViewCountLimit > index {
+            addDataFirebase(presenter.getFood(at: index), isLeft: false)
+        }
     }
     
     func returnToOriginalPosition(_ cardView: FoodCardSetView) {
