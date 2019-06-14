@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vqg-7l-tOI">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nNp-Pm-YR0">
+            <objects>
+                <navigationController id="vqg-7l-tOI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tjb-rV-AeS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dIO-lD-df4" kind="relationship" relationship="rootViewController" id="JC0-bz-k40"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHa-hu-Yfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1232" y="150"/>
+        </scene>
+        <!--ランチリスト-->
+        <scene sceneID="lD4-6H-epz">
+            <objects>
+                <viewController id="dIO-lD-df4" customClass="FoodListViewController" customModule="TamachiFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AVq-Cv-ywl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="N3U-de-BSj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BqF-tD-HIy">
+                                <rect key="frame" x="0.0" y="144" width="414" height="29"/>
+                                <segments>
+                                    <segment title="全て"/>
+                                    <segment title="好き"/>
+                                    <segment title="嫌い"/>
+                                </segments>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a5P-nN-seW">
+                                <rect key="frame" x="0.0" y="172" width="414" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tSb-aO-QmM">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6cS-N0-oas">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="N3U-de-BSj" firstAttribute="trailing" secondItem="KKJ-8m-72K" secondAttribute="trailing" id="Gj8-L8-qAy"/>
+                            <constraint firstItem="a5P-nN-seW" firstAttribute="top" secondItem="BqF-tD-HIy" secondAttribute="bottom" id="MhP-dU-2Ae"/>
+                            <constraint firstItem="N3U-de-BSj" firstAttribute="leading" secondItem="KKJ-8m-72K" secondAttribute="leading" id="RfJ-tQ-KJp"/>
+                            <constraint firstItem="KKJ-8m-72K" firstAttribute="trailing" secondItem="a5P-nN-seW" secondAttribute="trailing" id="TAO-IY-i0c"/>
+                            <constraint firstItem="KKJ-8m-72K" firstAttribute="bottom" secondItem="a5P-nN-seW" secondAttribute="bottom" id="To9-mk-53o"/>
+                            <constraint firstItem="a5P-nN-seW" firstAttribute="leading" secondItem="KKJ-8m-72K" secondAttribute="leading" id="tU8-1G-1Og"/>
+                            <constraint firstItem="BqF-tD-HIy" firstAttribute="top" secondItem="N3U-de-BSj" secondAttribute="bottom" id="uLP-qx-RJc"/>
+                            <constraint firstItem="BqF-tD-HIy" firstAttribute="leading" secondItem="KKJ-8m-72K" secondAttribute="leading" id="vVl-xB-naT"/>
+                            <constraint firstItem="KKJ-8m-72K" firstAttribute="trailing" secondItem="BqF-tD-HIy" secondAttribute="trailing" id="xOO-VL-yHs"/>
+                            <constraint firstItem="N3U-de-BSj" firstAttribute="top" secondItem="KKJ-8m-72K" secondAttribute="top" id="yC5-A8-aAG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KKJ-8m-72K"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ランチリスト" id="Ju2-4H-x0X"/>
+                    <connections>
+                        <outlet property="evaluationSegmentedControl" destination="BqF-tD-HIy" id="e1a-hH-Awy"/>
+                        <outlet property="foodCollectionView" destination="a5P-nN-seW" id="g3d-7Y-nmS"/>
+                        <outlet property="foodSearchBar" destination="N3U-de-BSj" id="sx5-Nl-XW3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yxr-06-5Xp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="153"/>
+        </scene>
+    </scenes>
+</document>
