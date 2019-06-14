@@ -7,18 +7,21 @@
 //
 
 import AudioToolbox
+import Firebase
 import UIKit
 
 class FoodCardSetViewController: UIViewController {
     fileprivate var foodCardSetViewList: [FoodCardSetView] = []
-    
     fileprivate var presenter: MockFoodPresenter!
-    
     fileprivate let foodCardSetViewCountLimit: Int = 16
+    
+    // インスタンス変数
+    private var DBRef: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFoodPresenter()
+        DBRef = Database.database().reference()
     }
     
     private func setupFoodPresenter() {
@@ -86,6 +89,21 @@ class FoodCardSetViewController: UIViewController {
             targetCount += 1
         }
     }
+    
+//    private func addDataFirebase(_ food: FoodModel) {
+//        let data = [
+//            "foodId": String(food.foodId),
+//            "storeName": food.storeName,
+//            "foodName": food.foodName,
+//            "foodPrice": String(food.foodPrice),
+//            "evaluation": food.evaluation ?? <#default value#>
+//        ]
+//        DBRef.child("user/01").setValue(data)
+//
+//        let defaultPlace = DBRef.child("user/01/age")
+//        defaultPlace.observe(.value) { (snap: FIRDataSnapshot) in self.displayAge.text = (snap.value! as AnyObject).description
+//        }
+//    }
 }
 
 extension FoodCardSetViewController: MockFoodPresenterProtocol {

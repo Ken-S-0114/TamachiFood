@@ -21,16 +21,16 @@ class MockFoodPresenter {
     
     func getFoods() {
         let foods: [FoodModel] = [
-            FoodModel(foodId: 0, foodName: "A", storeName: "A店", foodPrice: 1000, evaluation: nil),
-            FoodModel(foodId: 1, foodName: "B", storeName: "B店", foodPrice: 2000, evaluation: nil),
-            FoodModel(foodId: 2, foodName: "C", storeName: "C店", foodPrice: 3000, evaluation: nil),
-            FoodModel(foodId: 3, foodName: "D", storeName: "D店", foodPrice: 1000, evaluation: nil),
-            FoodModel(foodId: 4, foodName: "E", storeName: "E店", foodPrice: 2000, evaluation: nil),
-            FoodModel(foodId: 5, foodName: "F", storeName: "F店", foodPrice: 3000, evaluation: nil),
-            FoodModel(foodId: 6, foodName: "G", storeName: "G店", foodPrice: 3000, evaluation: nil),
-            FoodModel(foodId: 7, foodName: "H", storeName: "H店", foodPrice: 1000, evaluation: nil),
-            FoodModel(foodId: 8, foodName: "I", storeName: "I店", foodPrice: 2000, evaluation: nil),
-            FoodModel(foodId: 9, foodName: "J", storeName: "J店", foodPrice: 3000, evaluation: nil)
+            FoodModel(foodId: 0, foodName: "カルボナーラ", storeName: "A店", foodPrice: 1000, evaluation: .deselect),
+            FoodModel(foodId: 1, foodName: "焼肉定食", storeName: "B店", foodPrice: 2000, evaluation: .like),
+            FoodModel(foodId: 2, foodName: "サーロインステーキ", storeName: "C店", foodPrice: 3000, evaluation: .deselect),
+            FoodModel(foodId: 3, foodName: "D", storeName: "D店", foodPrice: 1000, evaluation: .deselect),
+            FoodModel(foodId: 4, foodName: "E", storeName: "E店", foodPrice: 2000, evaluation: .deselect),
+            FoodModel(foodId: 5, foodName: "F", storeName: "F店", foodPrice: 3000, evaluation: .deselect),
+            FoodModel(foodId: 6, foodName: "G", storeName: "G店", foodPrice: 3000, evaluation: .deselect),
+            FoodModel(foodId: 7, foodName: "H", storeName: "H店", foodPrice: 1000, evaluation: .deselect),
+            FoodModel(foodId: 8, foodName: "I", storeName: "I店", foodPrice: 2000, evaluation: .deselect),
+            FoodModel(foodId: 9, foodName: "J", storeName: "J店", foodPrice: 3000, evaluation: .deselect)
         ]
         return presenter.bindFoods(foods)
     }

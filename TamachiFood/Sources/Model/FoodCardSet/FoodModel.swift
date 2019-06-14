@@ -13,8 +13,31 @@ struct FoodModel {
     let foodName: String
     let storeName: String
     let foodPrice: Int
-    var evaluation: Bool?
-    // let url: URL
+    var evaluation: EvaluationStatus
+    
+    // let img: UIImage?
+    // let url: URL?
+}
+
+enum EvaluationStatus {
+    case like
+    case hate
+    case deselect
+    
+    func changeStatusToStr() -> String {
+        switch self {
+        case .like: return "好き"
+        case .hate: return "嫌い"
+        case .deselect: return "未選択"
+        }
+    }
+    
+    func newArriveToStr() -> String {
+        switch self {
+        case .deselect: return "新着"
+        case .like, .hate: return "選択済"
+        }
+    }
 }
 
 extension FoodModel: Equatable {
