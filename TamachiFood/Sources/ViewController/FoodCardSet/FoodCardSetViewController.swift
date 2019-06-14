@@ -6,18 +6,22 @@
 //  Copyright © 2019 佐藤賢. All rights reserved.
 //
 
+import AudioToolbox
+import Firebase
 import UIKit
 
 class FoodCardSetViewController: UIViewController {
     fileprivate var foodCardSetViewList: [FoodCardSetView] = []
-    
     fileprivate var presenter: MockFoodPresenter!
+    fileprivate let foodCardSetViewCountLimit: Int = 10
     
-    fileprivate let foodCardSetViewCountLimit: Int = 16
+    // インスタンス変数
+    private var DBRef: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFoodPresenter()
+        DBRef = Database.database().reference()
     }
     
     private func setupFoodPresenter() {
@@ -46,6 +50,7 @@ class FoodCardSetViewController: UIViewController {
             // URL
             
             foodCardSetView.isUserInteractionEnabled = false
+            foodCardSetView.tag = foods[index].foodId
             foodCardSetViewList.append(foodCardSetView)
             
             // 現在表示されているカードの背面へ新たに作成したカードを追加する
@@ -85,6 +90,17 @@ class FoodCardSetViewController: UIViewController {
             targetCount += 1
         }
     }
+    
+    private func addDataFirebase(_ food: FoodModel, isLeft: Bool) {
+        let evaluation: String = isLeft ? EvaluationStatus.like.changeStatusToStr() : EvaluationStatus.hate.changeStatusToStr()
+        let data = [
+            "storeName": food.storeName,
+            "foodName": food.foodName,
+            "evaluation": evaluation
+        ]
+        
+        DBRef.child("food").child("\(food.foodId)").setValue(data)
+    }
 }
 
 extension FoodCardSetViewController: MockFoodPresenterProtocol {
@@ -105,16 +121,24 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
     
     func swipedLeftPosition(_ cardView: FoodCardSetView) {
         debugPrint("左方向へのスワイプ完了しました。")
+        AudioServicesPlaySystemSound(1520)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
+        // if foodCardSetViewCountLimit >  {
+        addDataFirebase(presenter.getFood(at: cardView.tag), isLeft: true)
+        // }
     }
     
     func swipedRightPosition(_ cardView: FoodCardSetView) {
         debugPrint("右方向へのスワイプ完了しました。")
+        AudioServicesPlaySystemSound(1520)
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
+        // if foodCardSetViewCountLimit > index {
+        addDataFirebase(presenter.getFood(at: cardView.tag), isLeft: false)
+        // }
     }
     
     func returnToOriginalPosition(_ cardView: FoodCardSetView) {

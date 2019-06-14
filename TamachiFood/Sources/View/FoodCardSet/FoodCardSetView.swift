@@ -64,8 +64,6 @@ class FoodCardSetView: CustomViewBase {
     
     var readMoreButtonAction: (() -> Void)?
     
-    var index: Int = 0
-    
     override func initWith() {
         setupFoodCardSetView()
         setupReadMoreButton()
@@ -76,8 +74,7 @@ class FoodCardSetView: CustomViewBase {
     func setViewData(_ food: FoodModel) {
         storeNameLabel.text = food.storeName
         foodNameLabel.text = food.foodName
-        remarkLabel.text = String(food.foodPrice)
-        // foodImageView.image = UIImage.init()
+        remarkLabel.text = food.evaluation.newArriveToStr()
     }
     
     // Viewに対する初期設定
@@ -120,7 +117,7 @@ class FoodCardSetView: CustomViewBase {
                 y: center.y - yPositionFromCenter
             )
             delegate?.beganDragging(self)
-            // Debug.
+            
             debugPrint("beganCenterX:", originalPoint.x)
             debugPrint("beganCenterY:", originalPoint.y)
             
@@ -138,7 +135,6 @@ class FoodCardSetView: CustomViewBase {
             currentMoveXPercentFromCenter = min(xPositionFromCenter / UIScreen.main.bounds.size.width, 1)
             currentMoveYPercentFromCenter = min(yPositionFromCenter / UIScreen.main.bounds.size.height, 1)
             
-            // Debug.
             debugPrint("currentMoveXPercentFromCenter:", currentMoveXPercentFromCenter)
             debugPrint("currentMoveYPercentFromCenter:", currentMoveYPercentFromCenter)
             
@@ -152,7 +148,7 @@ class FoodCardSetView: CustomViewBase {
         case .ended, .cancelled:
             // ドラッグ終了時点での速度を算出
             let whenEndedVelocity = sender.velocity(in: self)
-            // Debug.
+            
             debugPrint("whenEndedVelocity:", whenEndedVelocity)
             
             let shouldMoveToLeft = (currentMoveXPercentFromCenter < -swipeXPosLimitRatio && abs(currentMoveYPercentFromCenter) > swipeYPosLimitRatio)
@@ -215,15 +211,18 @@ class FoodCardSetView: CustomViewBase {
     
     // カードを初期配置する位置へ戻す
     private func moveInitialPosition() {
+        // 表示前のカードの位置を設定
         let beforeInitializePosX: CGFloat = CGFloat(Int.createRandom(range: Range(-300 ... 300)))
         let beforeInitializePosY: CGFloat = CGFloat(-Int.createRandom(range: Range(300 ... 600)))
         let beforeInitializeCenter = CGPoint(x: beforeInitializePosX, y: beforeInitializePosY)
         
+        // 表示前のカードの傾きを設定
         let beforeInitializeRotateAngle: CGFloat = CGFloat(Int.createRandom(range: Range(-90 ... 90)))
         let angle = beforeInitializeRotateAngle * .pi / 180.0
         let beforeInitializeTransform = CGAffineTransform(rotationAngle: angle)
         beforeInitializeTransform.scaledBy(x: beforeInitializeScale, y: beforeInitializeScale)
         
+        // 画面外からアニメーションを伴って現れる動きを設定
         alpha = 0
         center = beforeInitializeCenter
         transform = beforeInitializeTransform
@@ -259,7 +258,6 @@ class FoodCardSetView: CustomViewBase {
             self.center = endCenterPosition
         }, completion: { _ in
             _ = isLeft ? self.delegate?.swipedLeftPosition(self) : self.delegate?.swipedRightPosition(self)
-            
             self.removeFromSuperview()
         })
     }
