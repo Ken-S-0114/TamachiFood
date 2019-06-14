@@ -90,20 +90,17 @@ class FoodCardSetViewController: UIViewController {
         }
     }
     
-//    private func addDataFirebase(_ food: FoodModel) {
-//        let data = [
-//            "foodId": String(food.foodId),
-//            "storeName": food.storeName,
-//            "foodName": food.foodName,
-//            "foodPrice": String(food.foodPrice),
-//            "evaluation": food.evaluation ?? <#default value#>
-//        ]
-//        DBRef.child("user/01").setValue(data)
-//
-//        let defaultPlace = DBRef.child("user/01/age")
-//        defaultPlace.observe(.value) { (snap: FIRDataSnapshot) in self.displayAge.text = (snap.value! as AnyObject).description
-//        }
-//    }
+    private func addDataFirebase(_ food: FoodModel, isLeft: Bool) {
+        let evaluation: String = isLeft ? EvaluationStatus.like.changeStatusToStr() : EvaluationStatus.hate.changeStatusToStr()
+        let data = [
+            "foodId": String(food.foodId),
+            "storeName": food.storeName,
+            "foodName": food.foodName,
+            "evaluation": evaluation
+        ]
+        
+        DBRef.child("food").setValue(data)
+    }
 }
 
 extension FoodCardSetViewController: MockFoodPresenterProtocol {
@@ -128,6 +125,8 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
+        presenter.getFoods()
+        addDataFirebase(presenter.getFood(index: 0), isLeft: true)
     }
     
     func swipedRightPosition(_ cardView: FoodCardSetView) {
@@ -136,6 +135,7 @@ extension FoodCardSetViewController: FoodCardSetViewProtocol {
         foodCardSetViewList.removeFirst()
         enableUserInteractionToFirstCardSetView()
         changeScaleToCardSetViews(skipSelectedView: false)
+        // addDataFirebase(<#T##food: FoodModel##FoodModel#>, isLeft: false)
     }
     
     func returnToOriginalPosition(_ cardView: FoodCardSetView) {
