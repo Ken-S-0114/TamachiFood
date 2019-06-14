@@ -160,8 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				D5B0A7BA22B203B200D329B8 /* GoogleService-Info.plist */,
-				D5B0A7B922B203A400D329B8 /* Sources */,
 				D5B0A7B822B2038A00D329B8 /* Resources */,
+				D5B0A7B922B203A400D329B8 /* Sources */,
 			);
 			path = TamachiFood;
 			sourceTree = "<group>";
@@ -267,6 +267,14 @@
 			path = FoodCardSet;
 			sourceTree = "<group>";
 		};
+		D50C8B2D22B32A8A000689B2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0A7D322B249E500D329B8 /* IntExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D5B0A7B822B2038A00D329B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,10 +287,14 @@
 		D5B0A7B922B203A400D329B8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D50C8B2D22B32A8A000689B2 /* Extension */,
 				D5B0A7D022B2245B00D329B8 /* Protocol */,
-				D5B0A7BC22B203D100D329B8 /* UI */,
 				D5B0A7BB22B203C200D329B8 /* Common */,
-				D5B0A7D322B249E500D329B8 /* IntExtension.swift */,
+				D50C8B2522B32101000689B2 /* Model */,
+				D50C8B2722B32124000689B2 /* Presenter */,
+				D50C8B2422B3204A000689B2 /* View */,
+				D50C8B2322B32021000689B2 /* ViewController */,
+				D50C8B2B22B3218C000689B2 /* Storyboard */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -295,18 +307,6 @@
 				B22E595F22AFE56200D0AB2B /* AppDelegate.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		D5B0A7BC22B203D100D329B8 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				D50C8B2B22B3218C000689B2 /* Storyboard */,
-				D50C8B2422B3204A000689B2 /* View */,
-				D50C8B2722B32124000689B2 /* Presenter */,
-				D50C8B2522B32101000689B2 /* Model */,
-				D50C8B2322B32021000689B2 /* ViewController */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		D5B0A7D022B2245B00D329B8 /* Protocol */ = {

@@ -59,6 +59,18 @@ class FoodCardSetView: CustomViewBase {
     private let beforeInitializeScale: CGFloat = FoodCardDefaultSettings.beforeInitializeScale
     private let afterInitializeScale: CGFloat = FoodCardDefaultSettings.afterInitializeScale
     
+    private enum status {
+        case new
+        case none
+        
+        func changeStatusToStr() -> String {
+            switch self {
+            case .new: return "新着"
+            case .none: return "選択済"
+            }
+        }
+    }
+    
     // FoodCardSetDelegate のインスタンス宣言
     weak var delegate: FoodCardSetViewProtocol?
     
@@ -76,7 +88,11 @@ class FoodCardSetView: CustomViewBase {
     func setViewData(_ food: FoodModel) {
         storeNameLabel.text = food.storeName
         foodNameLabel.text = food.foodName
-        remarkLabel.text = String(food.foodPrice)
+        if food.evaluation == nil {
+            remarkLabel.text = status.new.changeStatusToStr()
+        } else {
+            remarkLabel.text = status.none.changeStatusToStr()
+        }
         // foodImageView.image = UIImage.init()
     }
     
